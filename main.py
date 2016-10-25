@@ -18,7 +18,6 @@ if __name__ == '__main__':
 
     
     S = Spannungen (sigma_x,sigma_y,sigma_z,tau_xy,tau_xz,tau_yz)
-    #V = Verzerrungen(eps_x,eps_y,eps_z,gamma_xy,gamma_xz,gamma_yz)
     
     sigma = S.Hauptspannungen()
     
@@ -32,5 +31,6 @@ if __name__ == '__main__':
     S.ausgabe('J3')
     S.ausgabe('Haupttensor')
     S.ausgabe('hauptspannungen')
+    S.ausgabe('mises')
     plotter.sigma2D(sigma[0,0],sigma[1,1])
     

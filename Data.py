@@ -21,16 +21,13 @@ class Spannungen:
             sigma = np.array([[self.sigma_x,self.tau_xy],
                               [self.tau_xy,self.sigma_y]])
             return sigma
-
       def Tensor3D(self):
             sigma = np.array([[self.sigma_x,self.tau_xy,self.tau_xz],
                               [self.tau_xy,self.sigma_y,self.tau_yz],
                               [self.tau_xz,self.tau_yz,self.sigma_z]])
             return sigma
-
       def I1(self):
             return np.trace(Spannungen.Tensor3D(self))
-            
       def I2(self):
             return      self.sigma_x*self.sigma_y + \
                         self.sigma_x*self.sigma_z + \
@@ -38,18 +35,14 @@ class Spannungen:
                         self.tau_xy**2 - self.tau_yz**2 - self.tau_xz**2
       def I3(self):
             return np.linalg.det(Spannungen.Tensor3D(self))
-            
       def Deviator(self):
             sigma_m = 1/3*np.trace(Spannungen.Tensor3D(self))
             return Spannungen.Tensor3D(self) - sigma_m*np.eye(3)
-            
-            
       def Hauptspannungen(self):
             I1 = Spannungen.I1(self)
             I2 = Spannungen.I2(self)
             I3 = Spannungen.I3(self)
             return np.diag(solver.newton('cubic',1,-I1,-I2,-I3))
-            
       def HauptDeviator(self):
           sigma_m = 1/3 * np.trace(Spannungen.Hauptspannungen(self))
           return Spannungen.Hauptspannungen(self) - sigma_m * np.eye(3)
@@ -60,10 +53,14 @@ class Spannungen:
       def J2(self):
           return 0.5*np.trace(np.dot(Spannungen.HauptDeviator(self),\
                                    Spannungen.HauptDeviator(self)))
-
       def J3(self):
           return np.linalg.det(Spannungen.HauptDeviator(self))
-          
+      def vonMises(self):
+            sigma = Spannungen.Hauptspannungen(self)
+            s1 = sigma[0,0]
+            s2 = sigma[1,1]
+            s3 = sigma[2,2]
+            return (0.5*((s1-s2)**2+(s2-s3)**2+(s3-s1)**2))**0.5
       def ausgabe(self,string):
           if (string == 'Tenso2d' or string == 'Tensor2D' \
               or string == 'sigma2d' or string == 'sigma2D'):
@@ -99,20 +96,13 @@ class Spannungen:
           if (string == 'J3'):
               print('Invariante 3 des Haupttensors = %9.1f MPa\n'\
                     %Spannungen.J3(self))
+          if (string == 'Mises' or string == 'mises' \
+              or string == 'von Mises' or string == 'vonMises'):
+                print('Fliessspannung nach von Mises = %6.1f MPa'\
+                      %Spannungen.vonMises(self))
               
 class Verzerrungen:
-      def __init__(self, eps_x = 0, eps_y = 0, eps_z = 0,
-                   gamma_xy = 0, gamma_xz = 0, gamma_yz = 0):
-            self.eps_x = eps_x
-            self.eps_y = eps_y
-            self.eps_z = eps_z
-            self.gamma_xy = gamma_xy
-            self.gamma_xz = gamma_xz
-            self.gamma_yz = gamma_yz
-            
-      def Tensor2D(self):
-            epsilon = np.array([[self.eps_x,self.gamma_xy],
-                                [self.gamma_xy,self.eps_y]])
-            return epsilon
+      pass
+
 
 

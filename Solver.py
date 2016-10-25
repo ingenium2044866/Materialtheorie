@@ -43,16 +43,4 @@ class solver:
             x3 = -p/2 - (p**2/4-q)**0.5
             x = [x1,x2,x3]
             return x
-"""
-if __name__ == '__main__':
-    a =  2
-    b =  8
-    c =  5
-    d = -4
-    x,Iter = solver.newton('cubic',a,b,c,d)
-    print('x1 = %9.5f nach %2d Iterationen.'%(x[0],Iter))
-    print(x[1])
-    print('x2 = %9.5f.'%x[1])
-    print('f(x2) = %9.5f'%solver.f_cubic(x[1],a,b,c,d))
-    print('x3 = %9.5f.'%x[2])
-"""
+
