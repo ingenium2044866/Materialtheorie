@@ -28,7 +28,7 @@ class solver:
     def newton(functype,a,b,c,d,tol = 1e-09):
         if (functype == 'Cubic' or functype == 'cubic'):
             x = 1
-            x_neu = x + tol*1e+06
+            x_neu = x + x
             counter = 0
             while (abs(x_neu-x) > tol):
                 counter +=1
