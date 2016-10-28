@@ -675,7 +675,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="Invarianten_I">
+   <widget class="QLabel" name="label_Invarianten_I">
     <property name="geometry">
      <rect>
       <x>220</x>
@@ -692,7 +692,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Invarianten</string>
+     <string>Invarianten I</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_I1">
@@ -713,6 +713,141 @@
      <rect>
       <x>220</x>
       <y>185</y>
+      <width>50</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_I2">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>230</y>
+      <width>30</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>I 2 = </string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="I2">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>225</y>
+      <width>50</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_I3">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>270</y>
+      <width>30</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>I 3 = </string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="I3">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>265</y>
+      <width>50</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Invarianten_J">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>165</y>
+      <width>125</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Invarianten J</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_J1">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>190</y>
+      <width>30</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>J 1 = </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_J2">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>230</y>
+      <width>30</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>J 2 = </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_J3">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>270</y>
+      <width>30</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>J 3 = </string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="J1">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>185</y>
+      <width>50</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="J2">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>225</y>
+      <width>50</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="J3">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>265</y>
       <width>50</width>
       <height>25</height>
      </rect>
