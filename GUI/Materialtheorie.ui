@@ -863,8 +863,41 @@
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuDatei">
+    <property name="title">
+     <string>Datei</string>
+    </property>
+    <addaction name="actionBeenden"/>
+   </widget>
+   <widget class="QMenu" name="menuRechner">
+    <property name="title">
+     <string>Rechner</string>
+    </property>
+    <addaction name="actionEinheitenumrechner"/>
+    <addaction name="actionRechner"/>
+   </widget>
+   <addaction name="menuDatei"/>
+   <addaction name="menuRechner"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionBeenden">
+   <property name="text">
+    <string>Beenden</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+Q</string>
+   </property>
+  </action>
+  <action name="actionEinheitenumrechner">
+   <property name="text">
+    <string>Einheitenumrechner</string>
+   </property>
+  </action>
+  <action name="actionRechner">
+   <property name="text">
+    <string>Rechner</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
