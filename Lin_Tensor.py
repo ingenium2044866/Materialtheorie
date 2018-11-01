@@ -5,8 +5,8 @@ class Tensor:
     """
     Lineare Spannungs- und Verzerrungstensoren.
 
-    Input: Tensorkomponenten (Cuachy-Spannungstensor und Verzerrungstensor). Als Komponeneten:
-            T11, T22, T33, T12, T13, T23. Sechs Komponenten, weil die Tensoren ymmetrisch sind.
+    Input: Tensorkomponenten (Cauchy-Spannungstensor und Verzerrungstensor). Als Komponeneten:
+            T11, T22, T33, T12, T13, T23. Sechs Komponenten, weil die Tensoren symmetrisch sind.
 
     Output: Tensoren selbst, Kugeltensor, Deviator, Invarianten, Vergleichsgroessen (von Mises, Tresca)
 
@@ -85,19 +85,3 @@ class Tensor:
         if self.stressVaues:
             # Vergleichsspannung nach Tresca
             return max(principalDifferences)
-
-
-if __name__ == '__main__':
-    sxx = -2
-    syy = 0
-    szz = -2
-    sxy = 6
-    sxz = -4
-    szy = 6
-
-    tensor1 = Tensor(sxx, syy, szz, sxy, sxz, szy, True)
-    s_VM = tensor1.vonMises
-    tresca = tensor1.tresca
-
-    print("Stress,vMises = %.2f MPa" % s_VM)
-    print("Stress,Tresca = %.2f MPa" % tresca)
